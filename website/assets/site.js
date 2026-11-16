@@ -1,0 +1,1 @@
+const root=document.documentElement;const saved=localStorage.getItem('raptor-theme');if(saved==='light')root.classList.add('light');document.querySelector('.theme-toggle')?.addEventListener('click',()=>{root.classList.toggle('light');localStorage.setItem('raptor-theme',root.classList.contains('light')?'light':'dark')});
