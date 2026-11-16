@@ -10,7 +10,7 @@ Built for the iPad 3. Written in Objective-C and UIKit.
 
 [![Platform](https://img.shields.io/badge/platform-iOS%209%2B-lightgrey)](#compatibility)
 [![Architecture](https://img.shields.io/badge/architecture-ARMv7-blue)](#compatibility)
-[![Status](https://img.shields.io/badge/status-early%20development-orange)](#status)
+[![Build](https://img.shields.io/badge/build-ARMv7%20verified-brightgreen)](#building)
 
 [Website](https://pxotitas.github.io/raptor/) · [Source](https://github.com/pxotitas/raptor)
 
@@ -72,7 +72,7 @@ See the [build guide](https://pxotitas.github.io/raptor/docs/building.html) for 
 
 ## Status
 
-Raptor is experimental. The source is being developed against the iOS 9 SDK, but a complete ARMv7 package and playback on physical hardware have not yet been verified.
+Raptor is experimental. The ARMv7 package now builds successfully. Search and playback still need to be tested on the iPad 3 running iOS 9.3.5.
 
 ## Acknowledgements
 
