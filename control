@@ -1,0 +1,9 @@
+Package: app.raptor.youtube
+Name: Raptor
+Version: 0.1.0
+Architecture: iphoneos-arm
+Description: A lightweight YouTube client for legacy iPads.
+Maintainer: Raptor Project
+Author: Raptor Project
+Section: Applications
+Depends: firmware (>= 9.0)
