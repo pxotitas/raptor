@@ -1,64 +1,7 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#171717">
-  <title>Building Raptor</title>
-  <link rel="icon" href="../assets/raptor.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/style.css">
-</head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="../"><img src="../assets/raptor.svg" alt=""><span>Raptor</span></a>
-    <nav>
-      <a href="../#features">Features</a>
-      <a href="../#compatibility">Compatibility</a>
-      <a href="./building.html">Build guide</a>
-      <a class="github" href="https://github.com/pxotitas/raptor">GitHub ↗</a>
-    </nav>
-    <button class="theme-toggle" aria-label="Toggle color theme">◐</button>
-  </header>
-
-  <main style="max-width:850px;margin:0 auto;padding:70px 28px 110px">
-    <p class="eyebrow">Documentation</p>
-    <h1 style="font-size:48px;letter-spacing:-.05em">Building Raptor</h1>
-    <p style="color:var(--muted)">Raptor targets ARMv7 devices running iOS 9.0 or later. The primary test device is an iPad 3 on iOS 9.3.5.</p>
-
-    <h2>Requirements</h2>
-    <ul>
-      <li>Linux x86_64 or macOS build host.</li>
-      <li>Theos build system and an iOS device SDK.</li>
-      <li>Clang, GNU Make, Perl, ldid, Git and XZ utilities.</li>
-    </ul>
-
-    <h2>Install Theos on Arch Linux</h2>
-    <pre><code>sudo pacman -S --needed base-devel bash curl git perl xz
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Building Raptor</title><link rel="icon" href="../assets/raptor-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/style.css"></head><body>
+<header class="topbar"><a class="brand" href="../"><img src="../assets/raptor-mark.svg" alt=""><span>Raptor</span></a><nav><a href="../#features">Features</a><a href="../#compatibility">Compatibility</a><a href="./building.html">Build guide</a><a class="github" href="https://github.com/pxotitas/raptor">GitHub ↗</a></nav><button class="theme-toggle" aria-label="Toggle color theme">◐</button></header>
+<main style="max-width:850px;margin:0 auto;padding:70px 28px 110px"><p class="eyebrow">Documentation</p><h1 style="font-size:48px;letter-spacing:-.05em">Building Raptor</h1><p style="color:var(--muted)">Raptor targets ARMv7 devices running iOS 9.0 or later. The primary test device is an iPad 3 on iOS 9.3.5.</p><h2>Requirements</h2><ul><li>Linux x86_64 or macOS build host.</li><li>Theos build system and an iOS device SDK.</li><li>Clang, GNU Make, Perl, ldid, Git and XZ utilities.</li></ul><h2>Install Theos on Arch Linux</h2><pre><code>sudo pacman -S --needed base-devel bash curl git perl xz
 git clone --recursive https://github.com/theos/theos.git ~/theos
-export THEOS="$HOME/theos"</code></pre>
-    <p>Install the Linux iOS toolchain and an iOS device SDK under <code>$THEOS/sdks</code>. The Theos SDK repository provides patched SDKs. Linux builds should use an SDK version supported by the installed toolchain; the Raptor target currently uses iOS 9.3.</p>
-    <p><a href="https://github.com/theos/sdks">Theos SDKs</a> · <a href="https://theos.dev/docs/installation-linux">Theos Linux installation</a></p>
-
-    <h2>Build</h2>
-    <pre><code>cd raptor
-make clean package FINALPACKAGE=1</code></pre>
-    <p>The package is written to <code>packages/</code>. The output is a Debian package for jailbroken iOS devices (<code>iphoneos-arm</code>).</p>
-
-    <h2>Legacy ARMv7 notes</h2>
-    <p>The Makefile uses <code>-marm</code> to avoid a branch relocation issue in the legacy ARMv7 linker. Use an iOS device SDK, not an iOS Simulator SDK. Its system-library stubs must include ARMv7 exports for the device runtime.</p>
-    <p>The current development machine keeps legacy toolchain runtime libraries under <code>~/theos/legacy-libs</code>. If your Clang binary needs them, add that directory to <code>LD_LIBRARY_PATH</code> when invoking Make.</p>
-
-    <h2>Playback testing</h2>
-    <p>The iPad 3's A5X hardware is intended to use H.264/AVC video and AAC audio. The app must receive a compatible stream from YouTube's player; a browser quality preference alone cannot guarantee a codec. Playback and stream selection still need to be verified on the physical device.</p>
-
-    <p><a href="../">← Back to Raptor</a></p>
-  </main>
-
-  <footer>
-    <span>Raptor</span>
-    <span>Documentation</span>
-    <a href="https://github.com/pxotitas/raptor">Source code ↗</a>
-  </footer>
-  <script src="../assets/site.js"></script>
-</body>
-</html>
+export THEOS="$HOME/theos"</code></pre><p>Install the Linux iOS toolchain and an iOS device SDK under <code>$THEOS/sdks</code>. The Theos SDK repository provides patched SDKs. The Raptor target currently uses iOS 9.3.</p><p><a href="https://github.com/theos/sdks">Theos SDKs</a> · <a href="https://theos.dev/docs/installation-linux">Theos Linux installation</a></p><h2>Build</h2><pre><code>cd raptor
+make clean package FINALPACKAGE=1</code></pre><p>The package is written to <code>packages/</code> as a Debian package for jailbroken iOS devices (<code>iphoneos-arm</code>).</p><h2>Legacy ARMv7 notes</h2><p>The Makefile uses <code>-marm</code> to avoid a branch relocation issue in the legacy ARMv7 linker. Use an iOS device SDK, not an iOS Simulator SDK. Its system-library stubs must include ARMv7 exports for the device runtime.</p><p>The current development machine keeps legacy toolchain runtime libraries under <code>~/theos/legacy-libs</code>. If Clang needs them, add that directory to <code>LD_LIBRARY_PATH</code> when invoking Make.</p><h2>Playback testing</h2><p>The iPad 3's A5X hardware is intended to use H.264/AVC video and AAC audio. The app must receive a compatible stream from YouTube's player; a browser quality preference alone cannot guarantee a codec. Playback and stream selection still need to be verified on the physical device.</p><p><a href="../">← Back to Raptor</a></p></main><footer><span class="footer-brand"><img src="../assets/raptor-dino.svg" alt=""><strong>Raptor</strong></span><span>Documentation</span><a href="https://github.com/pxotitas/raptor">Source code ↗</a></footer><script src="../assets/site.js"></script></body></html>
