@@ -50,6 +50,7 @@ Raptor/
 │   ├── RaptorLogo.png
 │   ├── RaptorDino.png
 │   ├── RaptorAppIcon.png
+│   ├── RaptorFavicon.png
 │   ├── RaptorMark.png
 │   ├── Icon-*.png
 │   └── raptor-player.css
