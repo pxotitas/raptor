@@ -1,4 +1,4 @@
-TARGET := iphone:clang:10.3:9.0
+TARGET := iphone:clang:9.3:9.0
 ARCHS := armv7
 include $(THEOS)/makefiles/common.mk
 APPLICATION_NAME := Raptor

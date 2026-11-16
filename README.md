@@ -68,7 +68,7 @@ website/
 
 The project uses Theos and an iOS SDK. The target is ARMv7 with an iOS 9.0 deployment minimum.
 
-See [the build guide](https://pxotitas.github.io/raptor/building.html) for the Linux setup and build commands.
+See the [build guide](https://pxotitas.github.io/raptor/docs/building.html) for the Linux setup and build commands.
 
 ## Status
 
