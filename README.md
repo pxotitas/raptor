@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Raptor/Resources/RaptorIcon.svg" alt="Raptor" width="132" />
+<img src="Raptor/Resources/RaptorLogo.png" alt="Raptor" width="132" />
 
 # Raptor
 
@@ -47,7 +47,10 @@ Search and playback depend on YouTube's current website and player behavior. Com
 ```text
 Raptor/
 ├── Resources/
-│   ├── RaptorIcon.svg
+│   ├── RaptorLogo.png
+│   ├── RaptorDino.png
+│   ├── RaptorAppIcon.png
+│   ├── RaptorMark.png
 │   ├── Icon-*.png
 │   └── raptor-player.css
 ├── Sources/
