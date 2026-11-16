@@ -6,4 +6,5 @@ Raptor_FILES := Raptor/Sources/main.m Raptor/Sources/AppDelegate.m Raptor/Source
 Raptor_FRAMEWORKS := UIKit Foundation AVFoundation MediaPlayer
 Raptor_CFLAGS := -fobjc-arc -Wno-deprecated-declarations -marm
 Raptor_RESOURCE_DIRS := Raptor/Resources
+Raptor_RESOURCE_FILES := Raptor/Info.plist
 include $(THEOS_MAKE_PATH)/application.mk
